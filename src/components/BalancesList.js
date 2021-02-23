@@ -228,6 +228,25 @@ export default function BalancesList() {
         </AccordionDetails>
         
       </Accordion>
+      <Accordion style={{margin:"4px",borderRadius:"10px",backgroundColor:"#FDF3C7", border:"none!important",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel0a-content"
+          id="panel0a-header"
+        >
+          <div className="font-semibold">How do I see my text in the blockchain?</div>
+ 
+        </AccordionSummary>
+        <AccordionDetails>
+          <div>
+            Mummify adds your text as a Memo to a Solana transaction. If you click on <a className="hover:underline hover:text-blue-500 underline"  href="https://explorer.solana.com/tx/5F5G1PAomhepx2cMja1buozGua1QNQzwePpophKFckq8mM4rgJtdcPkNLziDTw5jopwnJuTbqUgPneA9KNg4v2N3?cluster=devnet">your transaction</a> and scroll to the Memo section you should see this:<br></br> 
+            <img className="w-full h-96" src="/stuff.jpg"></img>
+            <br></br> 
+            That's your text forever inscribed into the Solana blockchain!
+          </div>
+        </AccordionDetails>
+        
+      </Accordion>
       <Accordion style={{margin:"4px",borderRadius:"10px",backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
