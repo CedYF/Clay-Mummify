@@ -3,9 +3,8 @@ module.exports = {
     postcss: {
       plugins: [
         require( 'tailwindcss' ),
-		
 		require( 'autoprefixer' ),
-		require('tailwind-filter-utilities'),
+		// require('tailwind-filter-utilities'),
       ],
     },
   },

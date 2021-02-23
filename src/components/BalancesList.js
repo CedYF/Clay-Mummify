@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import List from '@material-ui/core/List';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 // eslint-disable-next-line
 import ListItem from '@material-ui/core/ListItem';
 // eslint-disable-next-line
 import ListItemText from '@material-ui/core/ListItemText';
+// eslint-disable-next-line
 import Paper from '@material-ui/core/Paper';
 import {
   // refreshWalletPublicKeys,
@@ -138,8 +145,8 @@ export default function BalancesList() {
   
   
   return (
-    <>
-    <Paper elevation={1} rounded>
+    <div >
+    <div className="bg-yellow-100  rounded shadow-md" >
      
         {/* 
          <AppBar position="static" color="default" elevation={1}>
@@ -198,19 +205,83 @@ export default function BalancesList() {
           setShowEditAccountNameDialog(false);
         }}
       />
-    </Paper>
-  <h2>Recent Saved Text</h2>
- 
+    </div>
 
+<div>
+<h2 className="mb-4 font-bold mt-6 md:mt-6 text-gray-600 text-xl md:text-3xl flex flex-row items-center ">
+           FAQ<img className="ml-2 w-8 h-8" alt="pyramid" src="/tablet2.png"></img>
+            </h2>
+
+<Accordion style={{backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <div className="font-semibold">How Does It Work?</div>
+ 
+        </AccordionSummary>
+        <AccordionDetails>
+          <div>
+            Mummify permanently inscribes your text into the blockchain. Never get your text deleted again! <br></br>It uses the <a className="hover:underline underline hover:text-blue-500" href="https://spl.solana.com/memo">Solana Blockchain Memo Program</a> to inscribe your text into a transaction. When you click "See on chain", scroll down and you'll see that a memo of your text is included with the transaction. All transactions are in the dev network and are simply sending SOL to and from the same wallet.
+          </div>
+        </AccordionDetails>
+        
+      </Accordion>
+      <Accordion style={{backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <div className="font-semibold">Why Mummify?</div>
+ 
+        </AccordionSummary>
+        <AccordionDetails>
+          <div>
+            The hieroglyphics from the Egyptian era is still with us today. Mainly, because pyramids and their writing were made in stone and that last forever... The same concept applies to blockchain. So as long as you keep the transaction url, you'll have your writing saved forever. No one can ever delete it!
+          </div>
+        </AccordionDetails>
+        
+      </Accordion>
+      <Accordion style={{backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel3a-content"
+          id="panel3a-header"
+        >
+          <div className="font-medium">How did you build this?</div>
+ 
+        </AccordionSummary>
+        <AccordionDetails>
+          <div>
+            This is a fork of the <a className="hover:underline hover:text-blue-500 underline"  href="https://github.com/project-serum/spl-token-wallet">spl token wallet </a> and it's been modified so it can only send internal transactions that also include memos. Full source code coming soon! We use React + TailwindCSS and host with Next JS. Built by Ed + <a className="hover:underline hover:text-blue-500 underline"  href="https://twitter.com/cedyarish">Ced</a>
+          </div>
+        </AccordionDetails>
+        
+      </Accordion>
+
+</div>
+
+
+  <h2 className="font-bold mt-6 md:mt-6 text-gray-600 text-xl md:text-3xl flex flex-row items-center ">Your Saved Text <img className="ml-2 w-8 h-8" alt="pyramid" src="/pyramids.png"></img></h2>
+ 
+<div className="grid grid-cols-2 md:grid-cols-3">
   {allTexts && allTexts !== null && allTexts.length > 0 && allTexts.map(l=>{
     if(l !== null){
-      return <div>{l.text} - <a target="_blank" rel="noreferrer" href={"https://explorer.solana.com/tx/"+l.sig+"?cluster=devnet"}>See on chain</a></div>
+      return <a target="_blank" rel="noreferrer" href={"https://explorer.solana.com/tx/"+l.sig+"?cluster=devnet"}>
+        <div className="cursor-pointer shadow-sm hover:shadow-xl m-1 md:m-2 flex flex-col bg-yellow-100  rounded p-2 md:p-5">
+        <div className="font-bold text-md md:text-xl ">{l.text}</div>
+        <a className="hover:underline hover:text-blue-500 text-xs" target="_blank" rel="noreferrer" href={"https://explorer.solana.com/tx/"+l.sig+"?cluster=devnet"}>See on chain</a>
+        </div>
+        </a>
 
     }else{
       return null
     }
       })}
-  </>
+      </div>
+  </div>
   );
 }
 
@@ -314,25 +385,27 @@ function saveMemo(theMemo) {
 
   return (
 
-    <>
-      <div style={{display:"flex",justifyContent:"center",flexDirection:"column",alignContent:"center",alignItems:"center"}}>
-        <h2>Mummify your text</h2>
-        <form onSubmit={(e)=>{setSendDialogOpen(true);saveMemo(myMemo);vValue(Math.random());therecent([myMemo].concat(theTexts));console.log('save text');console.log(myMemo); e.preventDefault();}} className={classes.root} noValidate autoComplete="off">
-        {/*saveMemo(e.target.value) <TextareaAutosize rounded id="outlined-basic2" label="Etch your text" placeholder="Enter text" variant="outlined"  aria-label="empty textarea" placeholder="Empty" /> */}
-
-            <TextField value={myMemo}
+    <div >
+      <div className="flex p-4 justify-center flex-col align-center items-center">
+        <h1 className="font-bold  text-xl md:text-2xl  flex flex-row justify-center items-center">Mummify your text <img alt="tablet" className="pl-1 w-6 h-6" src="/tablet.png"/></h1>
+        <h2 className="font-semibold text-gray-600 text-lg md:text-lg pb-4 flex flex-row justify-center items-center ">Scribe your thoughts into the blockchain </h2>
+        <form className="rounded w-full md:w-3/5" onSubmit={(e)=>{setSendDialogOpen(true);saveMemo(myMemo);vValue(Math.random());therecent([myMemo].concat(theTexts));console.log('save text');console.log(myMemo); e.preventDefault();}} noValidate autoComplete="off">
+        
+            <TextField fullWidth={true} className="w-90 bg-white mb-5 pb-10" value={myMemo}
             onChange={(e) => {setMyMemo(e.target.value);}} id="outlined-basic" label="Etch your text" placeholder="Enter text" variant="outlined" />
           </form>
-          <div stye={{margin:"10px",padding:"10px"}}></div>
-          <Button
-          style={{margin:"10px",padding:"10px"}}
-            variant="outlined"
+          <div  className="pt-5">
+          <Button 
+         
+      
+            variant="contained"
             color="primary"
-            startIcon={<SendIcon />}
+            endIcon={<SendIcon />}
             onClick={() => {setSendDialogOpen(true);saveMemo(myMemo);vValue(Math.random());therecent([myMemo].concat(theTexts));console.log('save text');console.log(myMemo)}}
           >
             Save To Solana Blockchain
           </Button>
+          </div>
         </div>
 
       {wallet.allowsExport && (
@@ -445,6 +518,6 @@ function saveMemo(theMemo) {
         balanceInfo={balanceInfo}
         publicKey={publicKey}
       />
-    </>
+    </div>
   );
 }
