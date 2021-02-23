@@ -28,6 +28,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.MuiAccordion-root:before{
+  opacity:0!important;
+}
 
 .mainBox {
   border-radius: 30px;

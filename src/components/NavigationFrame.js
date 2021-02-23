@@ -19,7 +19,7 @@ import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import SolanaIcon from './SolanaIcon';
-// import CodeIcon from '@material-ui/icons/Code';
+import CodeIcon from '@material-ui/icons/Code';
 import Tooltip from '@material-ui/core/Tooltip';
 import AddAccountDialog from './AddAccountDialog';
 import DeleteAccountDialog from './DeleteAccountDialog';
@@ -50,7 +50,7 @@ export default function NavigationFrame({ children }) {
     <>
       <AppBar style={{ background: '#2E3B55' }}  position="static">
         <Toolbar  >
-          <div class="flex align-center justify-between w-full">
+          <div className="flex align-center justify-between w-full">
           <Typography  variant="h6" className="flex flex-row justify-center" component="h1">
            Mummify Your Text <img alt="mummy" src="/imagem.png" className="w-8 h-8"/>
           </Typography>
@@ -294,17 +294,17 @@ function Footer() {
   const classes = useFooterStyles();
   return (
     <footer className={classes.footer}>
-      {/* <Button
+      <Button
         variant="outlined"
         color="primary"
         component="a"
         target="_blank"
         rel="noopener"
-        href="https://github.com/serum-foundation/spl-token-wallet"
+        href="https://github.com/CedYF/Clay-Mummify/"
         startIcon={<CodeIcon />}
       >
         View Source
-      </Button> */}
+      </Button>
     </footer>
   );
 }

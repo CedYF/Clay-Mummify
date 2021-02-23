@@ -212,7 +212,7 @@ export default function BalancesList() {
            FAQ<img className="ml-2 w-8 h-8" alt="pyramid" src="/tablet2.png"></img>
             </h2>
 
-<Accordion style={{backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
+<Accordion style={{margin:"4px",borderRadius:"10px",backgroundColor:"#FDF3C7", border:"none!important",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -228,7 +228,7 @@ export default function BalancesList() {
         </AccordionDetails>
         
       </Accordion>
-      <Accordion style={{backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
+      <Accordion style={{margin:"4px",borderRadius:"10px",backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -244,7 +244,7 @@ export default function BalancesList() {
         </AccordionDetails>
         
       </Accordion>
-      <Accordion style={{backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
+      <Accordion style={{margin:"4px",borderRadius:"10px",backgroundColor:"#FDF3C7", border:"unset",boxShadow:"var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);"}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3a-content"
@@ -255,7 +255,7 @@ export default function BalancesList() {
         </AccordionSummary>
         <AccordionDetails>
           <div>
-            This is a fork of the <a className="hover:underline hover:text-blue-500 underline"  href="https://github.com/project-serum/spl-token-wallet">spl token wallet </a> and it's been modified so it can only send internal transactions that also include memos. Full source code coming soon! We use React + TailwindCSS and host with Next JS. Built by Ed + <a className="hover:underline hover:text-blue-500 underline"  href="https://twitter.com/cedyarish">Ced</a>
+            This is a fork of the <a className="hover:underline hover:text-blue-500 underline"  href="https://github.com/project-serum/spl-token-wallet">spl token wallet </a> and it's been modified so it can only send internal transactions that also include memos. Full source code <a href="https://github.com/CedYF/Clay-Mummify/">available here</a>! We use React + TailwindCSS and host with Next JS. Built by Ed + <a className="hover:underline hover:text-blue-500 underline"  href="https://twitter.com/cedyarish">Ced</a>
           </div>
         </AccordionDetails>
         
@@ -387,7 +387,7 @@ function saveMemo(theMemo) {
 
     <div >
       <div className="flex p-4 justify-center flex-col align-center items-center">
-        <h1 className="font-bold  text-xl md:text-2xl  flex flex-row justify-center items-center">Mummify your text <img alt="tablet" className="pl-1 w-6 h-6" src="/tablet.png"/></h1>
+        <h1 className="font-bold  text-xl md:text-2xl  flex flex-row justify-center items-center"><span className="pr-2">Mummify your text</span> <img alt="tablet" className=" w-12 h-12" src="/imagem.png"/></h1>
         <h2 className="font-semibold text-gray-600 text-lg md:text-lg pb-4 flex flex-row justify-center items-center ">Scribe your thoughts into the blockchain </h2>
         <form className="rounded w-full md:w-3/5" onSubmit={(e)=>{setSendDialogOpen(true);saveMemo(myMemo);vValue(Math.random());therecent([myMemo].concat(theTexts));console.log('save text');console.log(myMemo); e.preventDefault();}} noValidate autoComplete="off">
         
