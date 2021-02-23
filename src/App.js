@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+//import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {
   ThemeProvider,
   unstable_createMuiStrictModeTheme as createMuiTheme,
@@ -17,16 +17,16 @@ import LoginPage from './pages/LoginPage';
 
 export default function App() {
   // TODO: add toggle for dark mode
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  //const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = React.useMemo(
     () =>
       createMuiTheme({
         palette: {
-          type: prefersDarkMode ? 'dark' : 'light',
+          type: 'light',
           primary: blue,
         },
       }),
-    [prefersDarkMode],
+    [],
   );
 
   React.useEffect(() => {
