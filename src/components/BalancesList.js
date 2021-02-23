@@ -240,7 +240,7 @@ export default function BalancesList() {
         <AccordionDetails>
           <div>
             Mummify adds your text as a Memo to a Solana transaction. If you click on <a className="hover:underline hover:text-blue-500 underline"  href="https://explorer.solana.com/tx/5F5G1PAomhepx2cMja1buozGua1QNQzwePpophKFckq8mM4rgJtdcPkNLziDTw5jopwnJuTbqUgPneA9KNg4v2N3?cluster=devnet">your transaction</a> and scroll to the Memo section you should see this:<br></br> 
-            <img className="w-full h-96" src="/stuff.jpg"></img>
+            <img alt="solana explainer" className="w-full h-96" src="/stuff.jpg"></img>
             <br></br> 
             That's your text forever inscribed into the Solana blockchain!
           </div>
