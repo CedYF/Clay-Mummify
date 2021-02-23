@@ -52,7 +52,7 @@ export default function NavigationFrame({ children }) {
         <Toolbar  >
           <div class="flex align-center justify-between w-full">
           <Typography  variant="h6" className="flex flex-row justify-center" component="h1">
-           Mummify Your Text <img alt="mummy" src="/mummy2.png" className="w-8 h-8"/>
+           Mummify Your Text <img alt="mummy" src="/imagem.png" className="w-8 h-8"/>
           </Typography>
           <h2 className="flex text-xs justify-center align-center md:text-lg text-bold"><a className="cursor-pointer" href="https://solana.com/defi"> Solana Hackathon Project</a></h2>
           </div>

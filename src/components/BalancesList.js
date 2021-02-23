@@ -146,7 +146,7 @@ export default function BalancesList() {
   
   return (
     <div >
-    <div className="bg-yellow-100  rounded shadow-md" >
+    <div className="mt-10 mainBox rounded shadow-md" >
      
         {/* 
          <AppBar position="static" color="default" elevation={1}>
@@ -270,7 +270,7 @@ export default function BalancesList() {
   {allTexts && allTexts !== null && allTexts.length > 0 && allTexts.map(l=>{
     if(l !== null){
       return <a target="_blank" rel="noreferrer" href={"https://explorer.solana.com/tx/"+l.sig+"?cluster=devnet"}>
-        <div className="cursor-pointer shadow-sm hover:shadow-xl m-1 md:m-2 flex flex-col bg-yellow-100  rounded p-2 md:p-5">
+        <div className="rounded-2xl cursor-pointer shadow-sm hover:shadow-xl m-1 md:m-1 flex flex-col bg-yellow-100 p-2 md:p-5">
         <div className="font-bold text-md md:text-xl ">{l.text}</div>
         <a className="hover:underline hover:text-blue-500 text-xs" target="_blank" rel="noreferrer" href={"https://explorer.solana.com/tx/"+l.sig+"?cluster=devnet"}>See on chain</a>
         </div>
